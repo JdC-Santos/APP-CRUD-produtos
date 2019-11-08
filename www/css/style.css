@@ -1,2 +1,23 @@
-/**/
+.table-icon{
+  font-size:14px !important;
+}
+.painel-cabecalho{
+  background:#DDD;
+  padding: 10px 0px;
+  margin:60px 0px 90px 0px;
+}
+.glyphicon{
+  font-size: 30px;
+}
+.form-control{
+  height:50px;
+  font-size:30px;
+}
 
+.table-container{
+  overflow-x: scroll;
+}
+
+#img_prod{
+  width:100%;
+}

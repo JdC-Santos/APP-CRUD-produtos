@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="menu_container"></div>
+      <div class="col-xs-12 table-container">
+        <button class="btn btn-success btn-lg btn-block" id="btnNovo"></button>
+        <br>
+
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr id="table_head">
+              <th scope="col" id="col1">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Ver</th>
+              <th scope="col">Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="table-conteudo">
+            
+          </tbody>
+        </table>
+
+      </div> <!-- fecha col -->
+    </div> <!-- fecha row -->
+  </div> <!-- fecha container -->
+
+  <script src="components/jquery-3.4.1.min.js"></script>
+  <script src="components/bootstrap/bootstrap.min.js"></script>
+  <script src="components/globais.js"></script>
+  <script src="components/functions.js"></script>
+  <script src="components/menu.js"></script>
+  <script src="components/listar.js"></script>
+
+  <script>
+    var listar_titulo = "produtos"; 
+    if(localStorage.getItem('listar') == "adm"){
+      listar_titulo = "admins";
+    }
+
+    $(document).ready(function(){
+      carregarMenu('Listar '+listar_titulo);
+      listar(localStorage.getItem('listar'));
+
+      if(localStorage.getItem('listar') == "prod"){
+        $('#btnNovo').html("Novo Produto");
+      }else{
+        $('#btnNovo').html("Novo Administrador");
+      }
+    });
+  </script>
+</body>
+</html>

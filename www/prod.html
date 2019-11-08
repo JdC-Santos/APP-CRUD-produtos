@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="menu_container"></div>
+
+      <div class="col-xs-12">
+        <form id="formProd" name="formProd" enctype="multipart/form-data">
+           
+          <div class="form-group">
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
+          </div>
+
+          <div class="form-group">
+              <input type="number" class="form-control" id="qtd" name="qtd" placeholder="quantidade" required>
+          </div>
+
+          <div class="form-group">
+              <select class="form-control" name="status" id="status">
+                <option value="0" id="opt_0" selected >Inativo</option>
+                <option value="1" id="opt_1">Ativo</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <input type="number" step=".05" class="form-control" id="valor" name="valor" placeholder="valor" required>
+          </div>
+
+          <div class="form-group">
+              <input type="number" step="1" class="form-control" id="cod_barras" name="cod_barras" 
+                placeholder="Cod. de barras" required>
+          </div>
+
+          <div class="form-group">
+            <img src="" id="img_prod">
+            <button type="button" id="btnCamera" class="btn info btn-lg btn-block">Foto</button>
+          </div>
+
+          <div class="form-group" >
+              <input type="file" class="form-control" id="foto" accept='image/*' name="foto">
+          </div>
+
+          <input type="hidden"  id="cd" name="cd" >
+          <input type="hidden"  name="criar" value="prod">
+          <input type="hidden"  name="editar" value="prod">
+
+          <!-- dados para acesso -->
+          <input type="hidden" id="cd_usuario" name="cd_usuario" value="">
+          <input type="hidden" id="cd_hash_login" name="cd_hash_login" value="">
+
+          <div class="form-group">
+            <button type="submit" id="btnEnviar" class="btn btn-success btn-lg btn-block">Cadastrar</button>
+          </div>
+
+        </form>
+      </div> <!-- fecha col -->
+    </div> <!-- fecha row -->
+  </div> <!-- fecha container -->
+
+  <script src="components/jquery-3.4.1.min.js"></script>
+  <script src="components/bootstrap/bootstrap.min.js"></script>
+  <script src="components/globais.js"></script>
+  <script src="components/functions.js"></script>
+  <script src="components/menu.js"></script>
+  <script src="components/criar.js"></script>
+  <script src="components/editar.js"></script>
+  <script>
+    $(document).ready(function(){
+      carregarMenu('Novo Produto');
+      carregaDadosDeAcesso();
+    });
+  </script>
+</body>
+</html>

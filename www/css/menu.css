@@ -1,0 +1,67 @@
+/* FORMATAÇÃO DO ARQUIVO MENU.HTML */
+#div_cabecalho{
+  text-align: center;
+  position: relative;
+  margin-top:8px;
+  margin-bottom:50px;
+}
+
+#menu_container{
+  padding:0px;
+}
+
+#div-img-profile{
+  text-align:center;
+  margin-bottom:20px;
+  /* display:none; */
+}
+
+.icon-menu{
+  color:white;
+  font-size:24px;
+  margin-top:10px;
+  margin-right:10px;
+}
+
+.menu-hamb{
+  position: relative;
+  top:20px;
+  font-size: 35px;
+  margin-bottom:50px;
+}
+#menu-hamb-inativo{
+  position:absolute;
+  left:20px;
+}
+#title-pg{
+  position: relative;
+  top:20px;
+  left:20px;
+  font-size:23px;
+}
+
+#menu-hamb-ativo{
+  right:20px;
+  float:right;
+}
+
+#div-img-profile img{
+  width:130px;
+}
+
+.menu{
+  transition:1s;
+  width:85%;
+  margin-top:-8px;
+  margin-left:-85%;
+  position:fixed;
+  z-index:99;
+  padding:10px;
+  background: linear-gradient(to top,#30ac91,#00d4ff);
+  min-height: 100vh;
+}
+.menu-item{
+  border-bottom:1px solid white;
+  font-size:28px;
+  /* display:none; */
+}
